@@ -1,9 +1,9 @@
 <div class="d-flex p-2 align-items-center">
     <div class="p-2 mr-auto">
-        <h2 class="m-0">Usuários</h2>
+        <h2 class="m-0">Heróis</h2>
     </div>
     <div class="p-2">
-    <?= $this->Html->link('Adicionar', ['controller' => 'Usuarios', 'action' => 'adicionar'], ['class' => 'btn btn-success btn-sm']); ?>
+    <?= $this->Html->link('Adicionar', ['controller' => 'Herois', 'action' => 'adicionar'], ['class' => 'btn btn-success btn-sm']); ?>
     </div>
 </div>
 <hr>
@@ -14,8 +14,8 @@
             <div class="row">
                 <div class="col-md-3">
                     <?= $this->Form->control('nome', [
-                            'label'     => false,
-                            'class'     => 'form-control form-resize',
+                            'label'       => false,
+                            'class'       => 'form-control form-resize',
                             'placeholder' => 'Nome'
                         ]);
                     ?>
@@ -44,41 +44,41 @@
         </div>
     </div>
 <?= $this->Form->end(); ?>
-<?php if ($usuarios->count() > 0) : ?>
+<?php if ($herois->count() > 0) : ?>
     <div class="table-responsive">
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th class="d-none d-sm-table-cell">E-mail</th>
+                    <th class="d-none d-sm-table-cell">Rank</th>
                     <th class="d-none d-sm-table-cell">Ativo</th>
                     <th class="d-none d-lg-table-cell">Data do Cadastro</th>
                     <th class="text-center">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($usuarios as $usuario): ?>
+                <?php foreach ($herois as $heroi): ?>
                     <tr>
-                        <td><?= h($usuario->nome) ?></td>
+                        <td><?= h($heroi->nome) ?></td>
                         <td class="d-sm-table-cell">
-                            <?= h($usuario->email) ?>
+                            <?= h($heroi->ranking->rank).' - Herói responsável por ameaças nível '.h($heroi->ranking->ameaca) ?>
                         </td>
                         <td class="d-sm-table-cell">
-                            <?= h($usuario->ativo) ? '<b class="text-success">Sim</b>' : '<b class="text-danger">Não</b>' ?>
+                            <?= h($heroi->ativo) ? '<b class="text-success">Sim</b>' : '<b class="text-danger">Não</b>' ?>
                         </td>
                         <td class="d-none d-lg-table-cell">
-                            <?= h($usuario->created->format('d/m/Y H:i:s')) ?>
+                            <?= h($heroi->created->format('d/m/Y H:i:s')) ?>
                         </td>
                         <td>
                             <span class="d-md-block">
-                                <?= $this->Html->link('<i class="fa fa-fw fa-pencil-alt"></i>', ['controller' => 'Usuarios', 'action' => 'alterar', $usuario->id], ['escape' => false, 'class' => 'btn btn-warning btn-sm text-light', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Alterar Usuário']) ?>
+                                <?= $this->Html->link('<i class="fa fa-fw fa-pencil-alt"></i>', ['controller' => 'Herois', 'action' => 'alterar', $heroi->id], ['escape' => false, 'class' => 'btn btn-warning btn-sm text-light', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Alterar Herói']) ?>
                                 <?php
-                                    $botao = $usuario->ativo ? 'btn-success' : 'btn-danger';
-                                    $tooltip = $usuario->ativo ? 'Desativar Usuário' : 'Ativar Usuário';
-                                    $confirm = $usuario->ativo ? 'desativar' : 'ativar';
-                                    $icone = $usuario->ativo ? 'fa-toggle-on' : 'fa-toggle-off';
+                                    $botao = $heroi->ativo ? 'btn-success' : 'btn-danger';
+                                    $tooltip = $heroi->ativo ? 'Desativar Herói' : 'Ativar Herói';
+                                    $confirm = $heroi->ativo ? 'desativar' : 'ativar';
+                                    $icone = $heroi->ativo ? 'fa-toggle-on' : 'fa-toggle-off';
                                 ?>
-                                <?= $this->Form->postLink("<i class='fa fa-fw {$icone}'></i>", ['controller' => 'Usuarios', 'action' => 'status', $usuario->id], ['escape' => false, 'class' => "btn {$botao} btn-sm", 'confirm' => "Deseja {$confirm} o registro especificado?", $usuario->id, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => "{$tooltip}"]) ?>
+                                <?= $this->Form->postLink("<i class='fa fa-fw {$icone}'></i>", ['controller' => 'Herois', 'action' => 'status', $heroi->id], ['escape' => false, 'class' => "btn {$botao} btn-sm", 'confirm' => "Deseja {$confirm} o registro especificado?", $heroi->id, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => "{$tooltip}"]) ?>
                             </span>
                         </td>
                     </tr>
