@@ -201,3 +201,13 @@ Type::build('timestamp')
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
+
+// Recupera o endereço
+preg_match('/(.*)(\/webroot\/index\.php)/', env('HTTP_HOST') . env('PHP_SELF'), $endereco);
+
+// Constantes da aplicação
+if (isset($endereco[1])) {
+    define('ENDERECO', (env('HTTP_HOST') == 'iheros.com.br' ? 'https' : 'http') . '://' . $endereco[1]);
+} else {
+    define('ENDERECO', 'http://0.0.0.0:8765');
+}

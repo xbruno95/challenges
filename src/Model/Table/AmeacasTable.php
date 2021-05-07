@@ -5,7 +5,7 @@
 	use Cake\ORM\Table;
 	use Cake\Validation\Validator;
 
-	class HeroisTable extends Table {
+	class AmeacasTable extends Table {
 
 		/**
 		 *	Inicializa todas as dependencias

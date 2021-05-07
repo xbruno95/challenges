@@ -23,6 +23,17 @@
         ]); ?>
     </div>
 </div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label><span class="text-danger">*</span> Latitude</label>
+        <?= $this->Form->control('latitude', ['class' => 'form-control latitude', 'placeholder' => 'Ex: -5.836597', 'label' => false, 'autocomplete' => 'off']) ?>
+    </div>
+    <div class="form-group col-md-6">
+        <label><span class="text-danger">*</span> Longitude</label>
+        <?= $this->Form->control('longitude', ['class' => 'form-control longitude', 'placeholder' => 'Ex: -35.236007', 'label' => false, 'autocomplete' => 'off']) ?>
+    </div>
+</div>
 <hr>
 <?= $this->Form->button('Salvar', ['class' => 'btn btn-success']) ?>
 <?= $this->Form->end() ?>
+<?= $this->Html->script(['main']);?>

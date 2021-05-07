@@ -9,7 +9,7 @@
                 <img src="" class="img-circle elevation-2" alt="User Image">
             </div> -->
             <div class="info">
-                <a href="#" class="d-block"><?= $this->request->session()->read('Auth.User.nome'); ?></a>
+                <a href="#" class="d-block"><?= $this->request->getSession()->read('Auth.User.nome'); ?></a>
             </div>
         </div>
         <nav class="mt-2">

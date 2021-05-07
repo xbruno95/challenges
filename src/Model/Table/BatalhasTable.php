@@ -5,15 +5,12 @@
 	use Cake\ORM\Table;
 	use Cake\Validation\Validator;
 
-	class RankingsTable extends Table {
+	class BatalhasTable extends Table {
 
 		/**
 		 *	Inicializa todas as dependencias
 		 */
 		public function initialize(array $config){
-            $this->setDisplayField(function ($e) {
-                return $e->get('rank').' - Herói responsável por ameaças nível '.$e->get('ameaca');
-            });
 			$this->addBehavior('Timestamp');
 		}
 

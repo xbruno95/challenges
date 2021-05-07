@@ -15,8 +15,8 @@
         ]); ?>
         <!-- Scripts -->
         <?= $this->Html->script([
-            'main',
             'plugins/jquery/jquery.min',
+            'plugins/jquery_mask/jquery.mask',
             'plugins/bootstrap/js/bootstrap.bundle.min',
             'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min',
             'plugins/adminlte/adminlte'

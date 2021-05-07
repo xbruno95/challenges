@@ -11,7 +11,7 @@
 		 *	Inicializa todas as dependencias
 		 */
 		public function initialize(array $config){
-            $this->displayField('nome');
+            $this->setDisplayField('nome');
 			$this->addBehavior('Timestamp');
 		}
 
