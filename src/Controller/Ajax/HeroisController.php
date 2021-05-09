@@ -21,7 +21,8 @@ class HeroisController extends AppController
         $herois = $this->Herois->find('all')->contain([
             'Rankings'
         ])->where([
-            'ativo' => 1
+            'ativo' => 1,
+            'NOT EXISTS(SELECT 1 FROM batalhas WHERE FIND_IN_SET(Herois.id, batalhas.herois) > 0 AND batalhas.status = 0)'
         ]);
         echo json_encode($herois);
     }

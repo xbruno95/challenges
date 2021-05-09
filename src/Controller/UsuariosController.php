@@ -21,7 +21,7 @@ class UsuariosController extends AppController
     public function index()
     {
         $this->paginate = [
-            'limit' => 40
+            'limit' => 15
         ];
         $conditions = ['Usuarios.id !=' => $this->Auth->user('id')];
         if ($this->request->is(['post', 'put'])) {

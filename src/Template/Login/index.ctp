@@ -1,5 +1,5 @@
 <?= $this->Form->create('', ['id' => 'log-in']); ?>
-    <?= $this->Html->image('logo', ['class' => 'mb-4', 'width' => '72', 'height' => '57']); ?>
+    <?= $this->Html->image('logo.png', ['class' => 'mb-4', 'width' => '120']); ?>
     <h1 class="text-white">iHeros</h1>
     <?= $this->Flash->render(); ?>
     <div class="form-floating">

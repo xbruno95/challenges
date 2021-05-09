@@ -21,7 +21,7 @@ class HeroisController extends AppController
     public function index()
     {
         $this->paginate = [
-            'limit' => 40
+            'limit' => 15
         ];
         $conditions = [];
         if ($this->request->is(['post', 'put'])) {

@@ -12,6 +12,10 @@
 		 */
 		public function initialize(array $config){
 			$this->addBehavior('Timestamp');
+            $this->belongsTo('Ameacas', [
+                'className' 	=> 'Ameacas',
+                'foreignKey' 	=> 'ameaca_id',
+            ]);
 		}
 
 	}
