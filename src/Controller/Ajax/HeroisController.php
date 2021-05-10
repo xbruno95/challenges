@@ -24,7 +24,8 @@ class HeroisController extends AppController
             'ativo' => 1,
             'NOT EXISTS(SELECT 1 FROM batalhas WHERE FIND_IN_SET(Herois.id, batalhas.herois) > 0 AND batalhas.status = 0)'
         ]);
-        echo json_encode($herois);
+        $this->response->body(json_encode($herois));
+        return $this->response;
     }
 
 }

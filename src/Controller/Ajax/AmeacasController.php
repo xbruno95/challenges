@@ -37,7 +37,8 @@ class AmeacasController extends AppController
             'status' => 1,
             'NOT EXISTS(SELECT 1 FROM batalhas WHERE Ameacas.id = batalhas.ameaca_id > 0 AND batalhas.status = 0)'
         ]);
-        echo json_encode($ameacas);
+        $this->response->body(json_encode($ameacas));
+        return $this->response;
     }
 
     public function novaAmeaca()

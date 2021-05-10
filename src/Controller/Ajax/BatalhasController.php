@@ -32,7 +32,8 @@ class BatalhasController extends AppController
                 $batalha->herois_nome .= $heroi->nome.'<br>';
             }
         }
-        echo json_encode($batalhas);
+        $this->response->body(json_encode($batalhas));
+        return $this->response;
     }
 
 }
