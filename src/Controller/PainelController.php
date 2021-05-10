@@ -17,8 +17,4 @@ class PainelController extends AppController
     {
     }
 
-    public function monitoraAmeacas()
-    {
-    }
-
 }
