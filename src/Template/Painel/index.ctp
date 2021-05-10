@@ -50,7 +50,7 @@
                 var status = dados.batalha.status == 1 ? 'Derrotado' : 'Ainda está de pé'
                 Swal.fire({
                     title: '<strong>Batalha Encerrada</strong>',
-                    icon: dados.batalha.status == 1 ? 'success' : 'danger',
+                    icon: dados.batalha.status == 1 ? 'success' : 'error',
                     html:
                         '<div class="text-center">' +
                             '<h2>'+dados.batalha.ameaca+'</h2>' +
@@ -190,7 +190,7 @@
                         '<h5>Batalha</h5>' +
                         '<div class="text-center">' +
                             batalha.herois_nome +
-                            '<div class="p-2">VS<div><br>' +
+                            '<div class="p-2">VS</div>' +
                             batalha.ameaca.nome +
                         '</div>' +
                     '</div>';

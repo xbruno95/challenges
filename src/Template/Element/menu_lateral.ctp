@@ -1,5 +1,5 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="/ihero/painel" class="brand-link">
+    <a href="/home" class="brand-link">
         <?= $this->Html->image('logo.png', ['class' => 'brand-image', 'style' => 'opacity: .8']); ?>
         <span class="brand-text font-weight-light">iHeros</span>
     </a>

@@ -61,7 +61,7 @@ class AppController extends Controller
                 'action' => 'index'
             ],
             'loginRedirect' => [
-                'controller' => 'Painel',
+                'controller' => 'Home',
                 'action' => 'index'
             ],
             'unauthorizedRedirect' => [

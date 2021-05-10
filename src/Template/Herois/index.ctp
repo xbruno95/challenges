@@ -50,9 +50,9 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th class="d-none d-sm-table-cell">Rank</th>
-                    <th class="d-none d-sm-table-cell">Ativo</th>
-                    <th class="d-none d-lg-table-cell">Data do Cadastro</th>
+                    <th class="d-sm-table-cell">Rank</th>
+                    <th class="d-sm-table-cell">Ativo</th>
+                    <th class="d-lg-table-cell">Data do Cadastro</th>
                     <th class="text-center">Ações</th>
                 </tr>
             </thead>
@@ -66,7 +66,7 @@
                         <td class="d-sm-table-cell">
                             <?= h($heroi->ativo) ? '<b class="text-success">Sim</b>' : '<b class="text-danger">Não</b>' ?>
                         </td>
-                        <td class="d-none d-lg-table-cell">
+                        <td class="d-lg-table-cell">
                             <?= h($heroi->created->format('d/m/Y H:i:s')) ?>
                         </td>
                         <td>
