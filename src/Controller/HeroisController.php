@@ -89,14 +89,18 @@ class HeroisController extends AppController
      */
     public function status($id = null)
     {
-        $heroi = $this->Herois->get($id);
-        $heroi = $this->Herois->patchEntity($heroi, [
-            'ativo' => $heroi->ativo ? 0 : 1
-        ]);
-        if ($this->Herois->save($heroi)) {
-            $this->Flash->success('Herói ' . ($heroi->ativo ? 'ativado' : 'desativado') . ' com sucesso');
+        if ($this->Herois->exists(['id' => $id, 'NOT EXISTS(SELECT 1 FROM batalhas WHERE FIND_IN_SET(Herois.id, batalhas.herois) > 0 AND batalhas.status = 0)'])) {
+            $heroi = $this->Herois->get($id);
+            $heroi = $this->Herois->patchEntity($heroi, [
+                'ativo' => $heroi->ativo ? 0 : 1
+            ]);
+            if ($this->Herois->save($heroi)) {
+                $this->Flash->success('Herói ' . ($heroi->ativo ? 'ativado' : 'desativado') . ' com sucesso');
+            } else {
+                $this->Flash->danger('Não foi possível ' . ($heroi->ativo ? 'ativar' : 'desativar') . ' o herói');
+            }
         } else {
-            $this->Flash->danger('Não foi possível ' . ($heroi->ativo ? 'ativar' : 'desativar') . ' o herói');
+            $this->Flash->danger('O Herói não foi encontrado ou está em batalha.');
         }
         return $this->redirect(['action' => 'index']);
     }

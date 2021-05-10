@@ -30,6 +30,21 @@
 
     var conn = new ab.Session('ws://localhost:8888',
         () => {
+            conn.subscribe('ameaca', (tipo, dados) => {
+                Swal.fire({
+                    title: '<strong>Nova ameaca encontrada</strong>',
+                    html:
+                        '<div class="text-center">' +
+                            '<h3>Nome: '+dados.ameaca.nome+'</h3>' +
+                            '<h4>Nivel: '+dados.ameaca.rank+'</h4>' +
+                        '</div>',
+                    showCloseButton: true
+                });
+                removeMarkers();
+                buscaHerois();
+                buscaAmeacas();
+                buscaBatalhas();
+            });
             conn.subscribe('batalha', (tipo, dados) => {
                 Swal.fire({
                     title: '<strong>Batalha iniciada</strong>',
@@ -74,39 +89,6 @@
     buscaHerois();
     buscaAmeacas();
     buscaBatalhas();
-
-    // $('#criar').click(function(){
-
-    //     informacoes =
-    //         '<div id="content" style="color: #000">' +
-    //             '<h3>Monstro</h3>' +
-    //             '<div>' +
-    //                 'Nível da ameaça: Dragon<br>' +
-    //                 'Status: Ativo' +
-    //             '</div>' +
-    //         '</div>';
-    //     var infowindow = new google.maps.InfoWindow({
-    //         content: informacoes,
-    //     });
-    //     var marker = new google.maps.Marker({
-    //         position: { lat: -21.2153, lng: -47.7712 },
-    //         map,
-    //         title: 'Ameaça',
-    //         animation: google.maps.Animation.DROP,
-    //         icon: icone_ameaca
-    //     });
-    //     map.setCenter(marker.getPosition());
-    //     marker.addListener("click", () => {
-    //         infowindow.open(map, marker);
-    //     });
-    //     setTimeout(function(){
-    //         map.setZoom(8);
-    //         infowindow.open(map, marker);
-    //     }, 500);
-    //     setTimeout(function(){
-    //         infowindow.close(map, marker);
-    //     }, 5000);
-    // });
 
     function buscaHerois() {
         $.ajax({
