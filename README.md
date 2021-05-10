@@ -28,7 +28,7 @@ No Painel de controle as ocorrências são marcadas em um mapa (Google Maps API)
 - Início de Batalha
 - Encerramento de Batalha
 
-Segue abaixo uma lista das função do sistema:
+Segue abaixo uma lista das funcionalidades do sistema:
 
 - Login (autenticação)
 - Lista, cadastra e altera usuários
@@ -54,3 +54,5 @@ https://iheros.com.br
 
 Usuário: zrp@teste.com.br
 Senha: 123456
+
+Espero que gostem :)
