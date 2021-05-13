@@ -72,7 +72,7 @@ Para instalar as dependencias execute o comando abaixo na raiz do projeto. (Só 
 ```shell
 composer install
 
-// Exemplo caminho absoluto
+# Exemplo caminho absoluto
 C:\wamp64\bin\php\php7.2.33\php.exe C:\ProgramData\ComposerSetup\bin\composer.phar install
 ```
 Para rodar o WebSocket execute o comando abaixo na raiz do projeto
@@ -80,7 +80,7 @@ Para rodar o WebSocket execute o comando abaixo na raiz do projeto
 ```shell
 bin\cake WebSocket
 
-// Exemplo caminho absoluto
+# Exemplo caminho absoluto
 C:\wamp64\bin\php\php7.2.33\php.exe C:\wamp64\www\iheros\bin\cake.php WebSocket
 ```
 
@@ -89,11 +89,11 @@ Para rodar manualmente o script que inicia ou encerra as batalhas basta executar
 ```shell
 bin\cake Batalhas
 
-// Exemplo caminho absoluto
+# Exemplo caminho absoluto
 C:\wamp64\bin\php\php7.2.33\php.exe C:\wamp64\www\iheros\bin\cake.php Batalhas
 
 bin\cake Batalhas encerrar
 
-// Exemplo caminho absoluto
+# Exemplo caminho absoluto
  C:\wamp64\bin\php\php7.2.33\php.exe C:\wamp64\www\iheros\bin\cake.php Batalhas encerrar
 ```
